@@ -1,22 +1,9 @@
 <script setup lang="ts">
-import Card from "./components/Card.vue";
-import { ref } from "vue";
-
-type Option = {
-  label: string;
-};
-
-const options = ref<Option[]>([
-  { label: "Create" },
-  { label: "Watch" },
-  { label: "Random" },
-]);
+import SideBar from "./components/SideBar.vue";
 </script>
 
 <template>
-  <main
-    class="items-center justify-center h-screen flex grid-cols-2 bg-green-950"
-  >
-    <Card v-for="option in options" :option="option.label" class="m-8" />
+  <main class="items-center justify-center h-screen flex grid-cols-2 bg-emerald-300 font-dosis">
+    <SideBar/>
   </main>
 </template>
