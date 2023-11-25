@@ -1,17 +1,20 @@
 <template>
-  <nav class="absolute top-0 left-0 h-[100%] w-60 bg-emerald-200 px-3 py-4">
+  <nav
+    class="absolute top-0 left-0 h-[100%] w-60 bg-emerald-300 px-3 py-4 shadow-lg shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 transition-colors"
+  >
     <header class="relative">
       <div class="flex items-center">
         <span class="min-w-[3.75rem] flex items-center">
           <img src="LogoCofilmo.png" alt="logo" class="w-14 rounded-lg" />
         </span>
 
-        <section class="text-lg font-medium flex flex-col text-emerald-700">
+        <section
+          class="text-xl font-medium flex flex-col text-emerald-700 dark:text-emerald-50"
+        >
           <span class="font-semibold">Cofilmo</span>
           <span class="font-medium my-[0.1rem]">Movie Tracker</span>
         </section>
       </div>
-
       <i
         class="bx bxs-right-arrow absolute top-[50%] right-[-1.5rem] h-6 w-6 bg-emerald-700 flex items-center justify-center rounded-md text-lg text-emerald-200 translate-y-[-50%]"
       ></i>
@@ -20,50 +23,58 @@
     <section class="h-[100%-50px] flex flex-col justify-between">
       <div class="py-[50%]">
         <ul class="">
-          <li class="h-10 m-5 list-none shadow-md bg-emerald-200">
+          <li
+            class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
+          >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-700 hover:bg-emerald-800 hover:text-white transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
               <i class="bx bx-home-alt min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2">Landing</span>
+              <span class="ml-2 text-xl">Home</span>
             </a>
           </li>
-          <li class="h-10 m-5 list-none shadow-md bg-emerald-200">
+          <li
+            class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
+          >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-700 hover:bg-emerald-800 hover:text-white transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
               <i class="bx bx-plus-circle min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2">Add</span>
+              <span class="ml-2 text-xl">Add</span>
             </a>
           </li>
-          <li class="h-10 m-5 list-none shadow-md bg-emerald-200">
+          <li
+            class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
+          >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-700 hover:bg-emerald-800 hover:text-white transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
               <i class="bx bx-movie-play min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2">Watch</span>
+              <span class="ml-2 text-xl">Watch</span>
             </a>
           </li>
-          <li class="h-10 m-5 list-none shadow-md bg-emerald-200">
+          <li
+            class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
+          >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-700 hover:bg-emerald-800 hover:text-white transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
               <i class="bx bx-dice-3 min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2">Random</span>
+              <span class="ml-2 text-xl">Random</span>
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="tran">
+      <div class="px-14">
         <div class="flex justify-center items-center p-4 absolute">
-          <label class="switch bg-emerald-200">
-            <input type="checkbox" class="hidden" />
-            <span class="slider bg-emerald-400"></span>
+          <label class="switch bg-emerald-300">
+            <input type="checkbox" id="darkmode" @change="toggleDarkMode" />
+            <span class="slider"></span>
           </label>
         </div>
       </div>
@@ -71,12 +82,16 @@
   </nav>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const toggleDarkMode = () => {
+  document.documentElement.classList.toggle("dark");
+};
+</script>
 
 <style>
 /* The switch - the box around the slider */
 .switch {
-  font-size: .7rem;
+  font-size: 0.7rem;
   position: relative;
   display: inline-block;
   width: 4em;
@@ -117,11 +132,11 @@
 }
 
 input:checked + .slider {
-  background-color: #03513b;
+  background-color: #01402e;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 4px #2196f3;
 }
 
 input:checked + .slider:before {
