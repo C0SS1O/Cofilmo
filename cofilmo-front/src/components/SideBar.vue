@@ -1,37 +1,46 @@
 <template>
   <nav
-    class="absolute top-0 left-0 h-[100%] w-60 bg-emerald-300 px-3 py-4 shadow-lg shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 transition-colors"
+    class="sidebar absolute top-0 left-0 h-[100%] w-60 bg-emerald-300 px-3 py-4 shadow-lg shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 whitespace-nowrap transition-all duration-[350ms]"
+    :class="{ close: sidebarClosed }"
   >
     <header class="relative">
-      <div class="flex items-center">
+      <div class="flex items-center py-2">
         <span class="min-w-[3.75rem] flex items-center">
-          <img src="LogoCofilmo.png" alt="logo" class="w-14 rounded-lg" />
+          <img
+            src="LogoCofilmo.png"
+            alt="logo"
+            class="w-14 h-14 rounded-lg"
+            loading="lazy"
+          />
         </span>
 
         <section
           class="text-xl font-medium flex flex-col text-emerald-700 dark:text-emerald-50"
         >
-          <span class="font-semibold">Cofilmo</span>
-          <span class="font-medium my-[0.1rem]">Movie Tracker</span>
+          <span class="text font-semibold" :class="{ hidden: sidebarClosed }">Cofilmo</span>
+          <span class="text font-medium" :class="{ hidden: sidebarClosed }">Movie Tracker</span>
         </section>
       </div>
       <i
-        class="bx bxs-right-arrow absolute top-[50%] right-[-1.5rem] h-6 w-6 bg-emerald-700 flex items-center justify-center rounded-md text-lg text-emerald-200 translate-y-[-50%]"
+        class="bx bxs-right-arrow cursor-pointer absolute top-[50%] right-[-1.5rem] h-6 w-6 bg-emerald-700 flex items-center justify-center rounded-md text-lg text-emerald-200 translate-y-[-50%]"
+        @click="toggleSidebar"
       ></i>
     </header>
 
-    <section class="h-[100%-50px] flex flex-col justify-between">
-      <div class="py-[50%]">
-        <ul class="">
+    <section class="h-[100%-50px] flex flex-col justify-between whitespace-nowrap py-24">
+      <div>
+        <ul>
           <li
             class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
           >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
-              <i class="bx bx-home-alt min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2 text-xl">Home</span>
+              <i class="bx bx-home-alt min-w-[2.2rem] text-3xl transition"></i>
+              <span class="text ml-8 text-xl " :class="{ hidden: sidebarClosed }"
+                >Home</span
+              >
             </a>
           </li>
           <li
@@ -39,41 +48,53 @@
           >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
-              <i class="bx bx-plus-circle min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2 text-xl">Add</span>
+              <i
+                class="bx bx-plus-circle min-w-[2.2rem] text-3xl transition"
+              ></i>
+              <span class="text ml-8 text-xl " :class="{ hidden: sidebarClosed }"
+                >Add</span
+              >
             </a>
           </li>
+
           <li
             class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
           >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
-              <i class="bx bx-movie-play min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2 text-xl">Watch</span>
+              <i
+                class="bx bx-movie-play min-w-[2.2rem] text-3xl transition"
+              ></i>
+              <span class="text ml-8 text-xl " :class="{ hidden: sidebarClosed }"
+                >Watch</span
+              >
             </a>
           </li>
+
           <li
             class="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
           >
             <a
               href="#"
-              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-800 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
+              class="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
             >
-              <i class="bx bx-dice-3 min-w-[3.75rem] text-3xl"></i>
-              <span class="ml-2 text-xl">Random</span>
+              <i class="bx bx-dice-3 min-w-[2.2rem] text-3xl transition"></i>
+              <span class="text ml-8 text-xl " :class="{ hidden: sidebarClosed }"
+                >Random</span
+              >
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="px-14">
+      <div class="relative py-14 toggle">
         <div class="flex justify-center items-center p-4 absolute">
           <label class="switch bg-emerald-300">
-            <input type="checkbox" id="darkmode" @change="toggleDarkMode" />
+            <input type="checkbox" id="darkmode" @change="toggleDarkMode" :checked="darkMode.valueOf" />
             <span class="slider"></span>
           </label>
         </div>
@@ -83,8 +104,13 @@
 </template>
 
 <script setup lang="ts">
-const toggleDarkMode = () => {
-  document.documentElement.classList.toggle("dark");
+import { ref } from "vue";
+import { darkMode, toggleDarkMode } from '../utils/DarkMode.ts';
+
+const sidebarClosed = ref(true);
+
+const toggleSidebar = () => {
+  sidebarClosed.value = !sidebarClosed.value;
 };
 </script>
 
@@ -139,7 +165,34 @@ input:focus + .slider {
   box-shadow: 0 0 4px #2196f3;
 }
 
+input + .slider:before {
+  box-shadow: 0 0 6px #000000;
+}
+
 input:checked + .slider:before {
   transform: translateX(2em);
+}
+
+/* On close sidebar */
+.sidebar.close {
+  width: 6.8rem;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar .text {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar.close header .bxs-right-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.sidebar header .bxs-right-arrow {
+  transform: translateY(-50%);
 }
 </style>
