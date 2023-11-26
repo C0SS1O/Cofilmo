@@ -112,9 +112,8 @@
           <label class="switch bg-emerald-300">
             <input
               type="checkbox"
-              id="darkmode"
               @change="toggleDarkMode"
-              :checked="darkMode.valueOf"
+              :checked="darkMode"
             />
             <span class="slider"></span>
           </label>
