@@ -1,8 +1,6 @@
 <template>
-  <nav
-    class="sidebar absolute top-0 left-0 h-[100%] w-60 bg-emerald-300 px-3 py-4 shadow-lg shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 whitespace-nowrap transition-all duration-[350ms]"
-    :class="{ close: sidebarClosed }"
-  >
+  <nav class="sidebar absolute top-0 left-0 h-[100vh] w-60 bg-emerald-300 px-3 py-2 shadow-lg shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 whitespace-nowrap transition-all duration-[350ms]"
+       :class="{ close: sidebarClosed }">
     <header class="relative">
       <div class="flex items-center py-2">
         <span class="min-w-[3.75rem] flex items-center">
@@ -214,5 +212,13 @@ input:checked + .slider:before {
 
 .sidebar header .bxs-right-arrow {
   transform: translateY(-50%);
+}
+
+.sidebar {
+  z-index: 1;
+}
+
+.close + .main-content {
+  margin-left: 6.8rem;
 }
 </style>
