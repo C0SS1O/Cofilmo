@@ -1,23 +1,31 @@
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 export const darkMode = ref(false);
+
+export const initializeDarkMode = () => {
+  // Check local storage for saved dark mode preference
+  const savedDarkMode = localStorage.getItem('darkMode');
+
+  // Set initial dark mode state based on local storage or system preference
+  darkMode.value = savedDarkMode !== null ? JSON.parse(savedDarkMode) : prefersDarkMode();
+
+  // Apply the dark mode class if necessary
+  document.documentElement.classList.toggle('dark', darkMode.value);
+};
 
 export const toggleDarkMode = () => {
   darkMode.value = !darkMode.value;
   document.documentElement.classList.toggle('dark', darkMode.value);
+
+  // Save dark mode preference to local storage
+  localStorage.setItem('darkMode', JSON.stringify(darkMode.value));
 };
 
-onMounted(() => {
-  // Check if the system is in dark mode
+const prefersDarkMode = () => {
+  // Check if the system prefers dark mode
   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  return darkModeMediaQuery.matches;
+};
 
-  // Automatically apply dark theme if the system is in dark mode
-  if (darkModeMediaQuery.matches) {
-    toggleDarkMode();
-  }
-
-  // Listen for changes in the operating system or system
-  darkModeMediaQuery.addEventListener('change', () => {
-    toggleDarkMode();
-  });
-});
+// Initialize dark mode when the module is loaded
+initializeDarkMode();

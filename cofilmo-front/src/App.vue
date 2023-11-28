@@ -1,11 +1,12 @@
 <template>
-  <main class="items-center justify-center h-screen flex grid-cols-2 bg-emerald-200 font-dosis dark:bg-emerald-900 transition-colors">
-    <SideBar @changeDarkMode="toggleDarkMode"/>
-    <router-view />
-  </main>
+  <SideBar class="flex-shrink-0" />
+  <router-view
+    class="flex-grow p-4 overflow-auto transition-all duration-500 ease-in-out"
+    :style="{ marginLeft: sharedState.sidebarWidth }"
+  />
 </template>
 
 <script setup lang="ts">
+import { sharedState } from './utils/SharedState.ts';
 import SideBar from "./components/SideBar.vue";
-import { toggleDarkMode } from './utils/DarkMode.ts';
 </script>
