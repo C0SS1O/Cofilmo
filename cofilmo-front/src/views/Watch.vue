@@ -1,5 +1,0 @@
-<template>
-  <div>
-    <h1>Watch ASJASKLDJKQWJEQWJELKQJWELKQWJELKQJWEKLQJWELQJWELKQWJELKQJWELKJQWLEK</h1>
-  </div>
-</template>
