@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
 import { options } from "../utils/Options";
+import "./ToggleStyle.css";
 
 interface ISidebarMenuProps {
   toggle: boolean;
@@ -33,35 +34,3 @@ const SidebarMenu: React.FC<ISidebarMenuProps> = ({ toggle }) => {
 };
 
 export default SidebarMenu;
-//     <li
-//       key={index}
-//       className="h-10 m-5 list-none shadow-md shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900"
-//     >
-//       {option.to.startsWith("/") ? (
-//         <Link to={option.to}>
-//           <div className="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis">
-//             <i
-//               className={`bx ${option.icon} min-w-[2.2rem] text-3xl transition`}
-//             />
-//             <span className="text ml-8 text-xl">
-//               {option.text}
-//             </span>
-//           </div>
-//         </Link>
-//       ) : (
-//         <a
-//           href={option.to}
-//           className="flex items-center justify-start h-full p-2 rounded-md text-xl text-emerald-800 hover:bg-emerald-800 hover:text-white dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 transition duration-300 font-medium font-dosis"
-//         >
-//           <i
-//             className={`bx ${option.icon} min-w-[2.2rem] text-3xl transition`}
-//           />
-//           <span
-//             className="text ml-8 text-xl"
-//           >
-//             {option.text}
-//           </span>
-//         </a>
-//       )}
-//     </li>
-// </ul>

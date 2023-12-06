@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SidebarHeader from "./SidebarHeader";
 import SidebarMenu from "./SidebarMenu";
+import ToggleSwitch from "./ToggleSwitch";
 
 const Sidebar = () => {
   const [toggle, setToggle] = useState(false);
@@ -12,6 +13,7 @@ const Sidebar = () => {
     >
       <SidebarHeader toggle={toggle} />
       <SidebarMenu toggle={toggle} />
+      <ToggleSwitch />
       <div
         className="absolute cursor-pointer top-[20%] h-6 w-6 bg-emerald-700 flex items-center justify-center rounded-md text-lg text-emerald-200 "
         onClick={() => {
