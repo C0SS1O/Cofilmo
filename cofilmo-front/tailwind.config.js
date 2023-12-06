@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'dosis': ['Nunito', 'sans-serif']
+        nunito: ['Nunito', 'sans-serif'],
       },
     },
   },

@@ -1,13 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base{
-  @font-face {
-    font-family: "Nunito";
-    src: url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-  }
-
   *{
     padding: 0;
     left: 0;
@@ -16,7 +12,11 @@
   }
   
   .sidebar-container{
-    @apply bg-emerald-600 shadow-stone-800 dark:bg-emerald-950 dark:shadow-stone-500 h-[96%] w-[16rem]
-    rounded-xl ml-2 p-2 border-2 transition-all duration-500 border-solid border-emerald-900;
+    @apply bg-emerald-500 dark:bg-emerald-950  h-[96%] w-[16rem] rounded-xl items-center ml-6 p-2 border-2 transition-all duration-500 border-solid border-emerald-900;
+  }
+
+  .sidebar-menu{
+    @apply flex items-center mt-4 p-2 rounded-md text-emerald-800 hover:bg-emerald-800 hover:text-white  transition-all duration-300 font-nunito text-lg;
+    /* dark:hover:bg-emerald-300 dark:hover:text-emerald-900 dark:text-emerald-50 */
   }
 }
