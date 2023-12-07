@@ -1,6 +1,5 @@
 // import { Link } from "react-router-dom";
 import { options } from "../utils/Options";
-import "./ToggleStyle.css";
 
 interface ISidebarMenuProps {
   toggle: boolean;

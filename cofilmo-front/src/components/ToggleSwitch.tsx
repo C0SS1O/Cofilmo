@@ -1,3 +1,5 @@
+import "../styles/ToggleStyle.css";
+
 const ToggleSwitch = () => {
   return (
     <div className="flex justify-center">
