@@ -37,13 +37,13 @@
   left: 0.3em;
   bottom: 0.3em;
   transform: rotate(270deg);
-  background-color: rgb(180, 176, 176);
+  background-color: rgb(107, 255, 105);
   transition: .4s;
   border: solid 2px #000000;
 }
 
 .switch input:checked + .slider {
-  background-color: #9AFFF3;
+  background-color: #d1fae5;
 }
 
 .switch input:focus + .slider {

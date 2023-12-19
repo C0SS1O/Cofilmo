@@ -16,7 +16,7 @@ const SidebarMenu: React.FC<ISidebarMenuProps> = ({ toggle }) => {
             } sidebar-menu shadow-lg shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900 items-center`}
           >
             <i
-              className={`${option.icon} min-w-[2.2rem] text-3xl transition`}
+              className={`${option.icon} min-w-[2rem] text-3xl transition justify-center text-center`}
             />
             <span
               className={`${

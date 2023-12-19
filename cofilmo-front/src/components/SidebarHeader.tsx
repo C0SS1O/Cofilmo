@@ -10,7 +10,7 @@ const SidebarHeader: React.FC<ISidebarHeaderProps> = ({ toggle }) => {
       className={`flex gap-4 items-center py-2 ${
         toggle
           ? "bg-none transition-all duration-200 delay-150"
-          : "bg-emerald-100 rounded-xl p-2"
+          : "bg-emerald-100 rounded-xl p-2 dark:bg-emerald-800"
       }`}
     >
       <div className="min-w-[3rem] flex items-center">
