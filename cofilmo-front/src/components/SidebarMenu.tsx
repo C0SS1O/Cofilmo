@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { options } from "../utils/Options";
 
 interface ISidebarMenuProps {
@@ -10,7 +10,7 @@ const SidebarMenu: React.FC<ISidebarMenuProps> = ({ toggle }) => {
     <section className="flex flex-col justify-between whitespace-nowrap py-20">
       {options.map((option) => {
         return (
-          <a href={`${option.to}`}
+          <Link to={option.to} key={option.id}
             className={`${
               toggle ? "" : ""
             } sidebar-menu shadow-lg shadow-emerald-400 bg-emerald-300 dark:bg-emerald-950 dark:shadow-zinc-900 items-center`}
@@ -25,7 +25,7 @@ const SidebarMenu: React.FC<ISidebarMenuProps> = ({ toggle }) => {
             >
               {option.text}
             </span>
-          </a>
+          </Link>
         );
       })}
     </section>
