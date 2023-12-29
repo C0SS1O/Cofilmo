@@ -9,7 +9,7 @@ const Sidebar = () => {
     <nav
       className={`${
         toggle ? "w-[4.5rem]" : ""
-      } sidebar-container shadow-md shadow-stone-800 dark:shadow-stone-500 whitespace-nowrap`}
+      } sidebar-container shadow-md shadow-stone-800 dark:shadow-stone-500 whitespace-nowrap rounded-md`}
     >
       <SidebarHeader toggle={toggle} />
       <SidebarMenu toggle={toggle} />
