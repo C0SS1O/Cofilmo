@@ -1,21 +1,36 @@
-import EternalSunshine from "../assets/EternalSunshine.webp";
+import { movieList } from "../utils/MovieList";
 
 export const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="relative w-[28rem] h-[16rem] overflow-hidden rounded-md">
-        <img
-          src={EternalSunshine}
-          alt="Eternal Sunshine Image"
-          className="w-full h-full object-cover rounded-md"
-        />
-      </div>
-      <h1 className="text-4xl font-bold text-emerald-900 dark:text-emerald-50 mt-4">
-        Your movie library
-      </h1>
-      <p className="text-xl text-emerald-900 dark:text-emerald-50">
-        To remember the emotions that you felt watching them
-      </p>
+      <section>
+        <h2 className="text-2xl font-bold mt-4">
+          Películas populares
+        </h2>
+        <ul>
+          {movieList.slice(0, 10).map((movie, index) => (
+            <li key={index}>{movie}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mt-4">Best Rated Movies</h2>
+        <ul>
+          {movieList.slice(10, 15).map((movie, index) => (
+            <li key={index}>{movie}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mt-4">Last Added Movies</h2>
+        <ul>
+          {movieList.slice(15, 18).map((movie, index) => (
+            <li key={index}>{movie}</li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 };

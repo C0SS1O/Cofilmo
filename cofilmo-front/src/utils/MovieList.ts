@@ -1,0 +1,22 @@
+export const movieList = [
+  "Enter the Void [Gaspar Noé]",
+  "Requiem For a Dream [Darren Aronofsky]",
+  "La forma del agua [Guillermo del Toro]",
+  "Una cena incomoda [Miguel Arteta]",
+  "El último disparo [Steven C. Miller]",
+  "Band AID [Zoe Lister-Jones]",
+  "Overdrive [Antonio Negret]",
+  "The hero [Brett Haley]",
+  "Tres anuncios en las afueras [Martin McDonagh]",
+  "All Eyez On Me [Benny Boom]",
+  "La primera vez que nos vimos [Ari Sandel]",
+  "Asesinato en el orient express [Kenneth Branagh]",
+  "Coco [Lee Unkrich]",
+  "Roman J. Israel, Esq. [Dan Gilroy]",
+  "Asalto al convoy [Frédéric Schoendoerffer]",
+  "Actos de venganza [Isaac Florentine]",
+  "Extraordinario [Stephen Chbosky]",
+  "El instante más oscuro [Joe Wright]",
+  "Newness [Drake Doremus]",
+  "Los padecientes [Nicolás Tuozzo]"
+];
